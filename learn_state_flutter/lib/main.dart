@@ -69,7 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final pages = [
     HomePage(),
-    // Container(color: Colors.yellow,),
     Container(color: Colors.blue,),
     Container(color: Colors.green,),
     Container(color: Colors.orange,),
