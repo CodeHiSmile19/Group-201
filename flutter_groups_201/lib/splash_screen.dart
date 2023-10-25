@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'bottom_bar_screen.dart';
+import 'bottom_bar_screen/bottom_bar_screen2.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BottomBarScreen(),
+                      builder: (context) => const BottomBarScreen2(),
                     ),
                   );
                 },
