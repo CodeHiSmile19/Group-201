@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_groups_201/login_screen.dart';
 
 import 'bottom_bar_screen.dart';
 import 'bottom_bar_screen/bottom_bar_screen2.dart';
@@ -34,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BottomBarScreen2(),
+                      builder: (context) => const LoginScreen(),
                     ),
                   );
                 },
