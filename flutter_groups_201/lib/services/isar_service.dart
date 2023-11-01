@@ -24,9 +24,15 @@ class IsarService {
     return Future.value(Isar.getInstance());
   }
 
-  Future<void> createAccount(AccountEntity phoneNumber) async {
-    final isar = await database;
-    isar.writeTxnSync<int>(() => isar.accountEntitys.putSync(phoneNumber));
+  ///Thêm try catch
+  Future<bool> createAccount(AccountEntity account) async {
+    try {
+      final isar = await database;
+      isar.writeTxnSync<int>(() => isar.accountEntitys.putSync(account));
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 
   Future<List<AccountEntity>> getAllAccounts() async {
@@ -36,10 +42,16 @@ class IsarService {
     return result;
   }
 
-  Future<void> deletePhoneNumber(AccountEntity phoneNumber) async {
-    final isar = await database;
-    await isar.writeTxn(() async {
-      await isar.accountEntitys.delete(phoneNumber.id); // delete
-    });
+  ///Thêm try-catch
+  Future<bool> deleteAccount(AccountEntity account) async {
+    try {
+      final isar = await database;
+      await isar.writeTxn(() async {
+        await isar.accountEntitys.delete(account.id); // delete
+      });
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 }
